@@ -1,0 +1,2 @@
+v-bind:classes -> bind the attributes to buttonClasses 
+v-on is eventHandlers 

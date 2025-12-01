@@ -6,18 +6,42 @@
     <title>Vue Start</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+<style>
+    html,body{
+        height: 100%;
+    }
+
+    body{
+        display: grid;
+        place-items: center;
+    }
+
+    .text-green{
+        color: green;
+    }
+
+    .text-red{
+        color:red;
+    }
+</style>
 <body>
     <div class="app" id="app">
-        <p><input type="text" name="" id="" v-model="greeting"></p>
-        <p>{{ greeting }}({{greeting.length}})</p>  
+      <button :class="active ? 'text-red' : 'text-green'" @click="toggle">click me</button> 
     </div>
 
     <script>
         Vue.createApp({
             data(){
-                return{
-                    greeting: 'Hello world'
+                return{ 
+                    buttonClasses: 'text-green',
+                    active: false
                 };
+            },
+            methods:{
+                toggle(){
+                   
+                    this.active = !this.active
+                }
             }
         }).mount('#app');
     </script>
