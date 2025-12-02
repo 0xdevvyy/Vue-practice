@@ -13,13 +13,11 @@
         <app-button>Click me</app-button>
     </div>
 
-    <script>
+    <script type="module">
+        import AppButton from './js/components/AppButton.js';
         let app = {
             components: {
-                'app-button':{
-                    template: `<button class="bg-gray-200 hover:bg-gray-400 border rounded px-5 py-7"><slot /></button>`,
-                   
-                }
+                'app-button': AppButton
                 
             }
         };
