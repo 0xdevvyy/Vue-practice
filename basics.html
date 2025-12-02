@@ -10,57 +10,20 @@
 
 <body class="h-full grid place-items-center">
     <div class="app" id="app">
-        <section v-show="inProgressAssignments.length">
-            <h2 class="font-bold text-blue mb-2">Assignments</h2>
-            <ul>
-                <li v-for="assignment in inProgressAssignments" 
-                    :key="assignment.id">
-                    <label >
-                        {{assignment.name}}
-                        <input type="checkbox"v-model="assignment.complete">
-                    </label>
-                </li>
-            </ul>
-        </section>
-
-         <section v-show="completedAssignments.length">
-            <h2 class="font-bold text-blue mt-2">Completed Assignments</h2>
-            <ul>
-                <li v-for="assignment in completedAssignments"
-                    :key="assignment.id">
-                    <label for="">
-                        {{assignment.name}}
-                        <input type="checkbox"v-model="assignment.complete">
-                    </label>
-                </li>
-            </ul>
-        </section>
-        
+        <app-button>Click me</app-button>
     </div>
 
     <script>
         let app = {
-            data(){
-                return {
-                    assignments: [
-                        {name: 'Finish Project', complete: false, id:1},
-                        {name: 'Read Chapte 4', complete: false, id:2},
-                        {name: 'Turn in homework', complete: false, id:3},
-                    ]
+            components: {
+                'app-button':{
+                    template: `<button class="bg-gray-200 hover:bg-gray-400 border rounded px-5 py-7"><slot /></button>`,
+                   
                 }
-            },
-            computed:{
-                completedAssignments(){
-                    return this.assignments.filter(assignment => assignment.complete)
-                },
-                inProgressAssignments(){
-                    return this.assignments.filter(assignment => !assignment.complete)
-                }
-
                 
             }
+        };
 
-        }
         Vue.createApp(app).mount('#app');
     </script>
 </body>
