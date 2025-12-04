@@ -1,3 +1,3 @@
 v-bind:classes -> bind the attributes to buttonClasses 
 v-on is eventHandlers 
-ohh so there is a slot in vue like in blade template in laravel 
+ohh so there is a slot in vue like in blade template in laravel
