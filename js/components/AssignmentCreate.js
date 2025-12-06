@@ -17,6 +17,7 @@ export default {
         add(){
             if(this.newAssignment === ''){
                 alert('please enter a value')
+                return 
             }
 
             this.$emit('add', this.newAssignment)
