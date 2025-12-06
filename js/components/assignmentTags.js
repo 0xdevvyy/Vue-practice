@@ -4,11 +4,11 @@ export default {
         <div class="flex gap-2">
             <button 
             v-for="tag in tags" 
+            @click="$emit('update:currentTag',tag)"
             class="border rounded px-1 py-px text-sm"
             :class = "{
                 'border border-blue-600' : tag === currentTag
             }"
-            @click="$emit('change',tag)"
             >
                 {{tag}}
             </button>
