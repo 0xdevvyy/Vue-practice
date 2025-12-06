@@ -2,3 +2,10 @@ v-bind:classes -> bind the attributes to buttonClasses
 v-on is eventHandlers 
 ohh so there is a slot in vue like in blade template in laravel
 @subit.prevent -> prevent the default action
+one way od passing a data to parent and child is props
+
+a parent will communicate to the child to passing down props
+a child will communicate to the parent to ommit an event 
+
+this.$emit('name', this.newAssignment)
+to listen a custom event @add or the name of your ommit @name
