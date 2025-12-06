@@ -14,3 +14,8 @@ you can also create a :class for it to be active it will merge in the class
 
 class= "border ...."
 :class = "{'border rounded': condition}"
+
+
+@input = "name = $event.target.value" -> long form of v-model="name"
+v model do 2 things it binds the value and it listen when the value changes 
+update:modelValue

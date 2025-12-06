@@ -8,9 +8,8 @@ export default {
                 <span>({{assignments.length}})</span>
             </h2>
             <assignment-tags 
+            v-model:currentTag="currentTag"
             :initial-tags="assignments.map(a => a.tag)" 
-            :current-tag="currentTag"
-            @change="currentTag = $event"
             ></assignment-tags>
            
             <ul class="border border-white divide-y mt-4">
