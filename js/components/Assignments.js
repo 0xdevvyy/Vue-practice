@@ -13,9 +13,9 @@ export default {
     data(){
         return {
             assignments: [
-                {name: 'Finish Project', complete: false, id:1},
-                {name: 'Read Chapte 4', complete: false, id:2},
-                {name: 'Turn in homework', complete: false, id:3},
+                {name: 'Finish Project', complete: false, id:1, tag: 'math'},
+                {name: 'Read Chapte 4', complete: false, id:2, tag: 'math'},
+                {name: 'Turn in homework', complete: false, id:3, tag: 'programming'},
             ],
 
         }
@@ -35,7 +35,8 @@ export default {
             this.assignments.push({
                 name: name,
                 completed: false,
-                id: this.assignments.length + 1
+                id: this.assignments.length + 1,
+                tag: 'math'
             })
         }
     }

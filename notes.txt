@@ -9,3 +9,8 @@ a child will communicate to the parent to ommit an event
 
 this.$emit('name', this.newAssignment)
 to listen a custom event @add or the name of your ommit @name
+Set -> is  a way to create a set of items which set items must be unique
+you can also create a :class for it to be active it will merge in the class 
+
+class= "border ...."
+:class = "{'border rounded': condition}"
