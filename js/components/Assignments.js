@@ -13,9 +13,7 @@ export default {
     data(){
         return {
             assignments: [
-                {name: 'Finish Project', complete: false, id:1, tag: 'math'},
-                {name: 'Read Chapter 4', complete: false, id:2, tag: 'math'},
-                {name: 'Turn in homework', complete: false, id:3, tag: 'programming'},
+                
             ],
 
         }
@@ -28,6 +26,13 @@ export default {
                 inProgress: this.assignments.filter(assignment => !assignment.complete)
             }
         } 
+    },
+     created(){
+        fetch('http://localhost:3000/assignments')
+            .then(response => response.json())
+            .then(assignments => {
+                this.assignments = assignments
+            });
     },
 
     methods:{
