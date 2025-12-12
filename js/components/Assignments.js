@@ -1,29 +1,48 @@
 import AssignmentList from "./AssignmentList.js"
 import AssignmentCreate from "./AssignmentCreate.js"
+
 export default {
     components: {AssignmentList, AssignmentCreate},
    template: `
-    <section class="space-y-6">
-        <assignment-list :assignments="filters.inProgress" title="Assignment"></assignment-list>
-        <assignment-list :assignments="filters.completed" title="Completed Assignment"></assignment-list>
-    </section>
-    <assignment-create @add="add"></assignment-create>
-   
+        <section class="space-y-6">
+            <assignment-list :assignments="filters.inProgress" title="Assignment">
+                <assignment-create @add="add"></assignment-create>
+            </assignment-list>
+            <div v-show="showCompleted">
+                <assignment-list
+                    :assignments="filters.completed" 
+                    title="Completed Assignment" 
+                    can-toggle
+                    @toggle="showCompleted = !showCompleted"
+                >
+                </assignment-list>
+                
+            </div>
+        </section>
    `,
     data(){
         return {
             assignments: [
                 
             ],
+            showCompleted: true
 
+        }
+    },
+    watch: {
+        'filters.completed'(newVal) {
+            if (newVal.length > 0) {
+                this.showCompleted = true;
+            }
         }
     },
     computed:{
         
         filters(){
             return{
-                completed: this.assignments.filter(assignment => assignment.complete),
-                inProgress: this.assignments.filter(assignment => !assignment.complete)
+                inProgress: this.assignments.filter(assignment => !assignment.complete),
+                completed: this.assignments.filter(assignment => assignment.complete)
+                
             }
         } 
     },

@@ -23,3 +23,11 @@ update:modelValue
 
 to setup a fake api npm install json-server --save-dev
 npx json-server <db.json> to set it up 
+
+
+can use v-text or the {{heading}}
+
+<template v-slot:default"> -> this shows what is the default slot is 
+$slots -> all of my slots will be stored here
+v-if = "$slots.heading" 
+#heading -> this is the short hand for v-slots:heading
