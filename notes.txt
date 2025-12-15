@@ -31,3 +31,33 @@ can use v-text or the {{heading}}
 $slots -> all of my slots will be stored here
 v-if = "$slots.heading" 
 #heading -> this is the short hand for v-slots:heading
+
+
+vite is a tool is a build tool that takes care of server and hot reloading when it changes a file the browser instantly update the change 
+    build tool that bundle up the code
+
+npm init vue@latest
+
+.vue is a single style component -> it is a single file that contains a script, respective template and any optional styling
+@ is an alias
+
+<RouterView /> -> will display the corresponding vue components for whatever component matches the current route
+pascal case is the convention
+THe -> is a common convention to proceed it with the word the -> it is a one time thing 
+
+2 diff ways to organized and structure the code 
+
+options api or composition api 
+
+options API is this code that i am doing 
+
+composition is a set of api that allows us to author vue components using imported functions instead of declaring an options 
+it is an umbrella that covers the following API
+
+reactivity API -> ref and reactive , that allows us to directly create reactive component state and watchers note like the one that i did in watchng if there is one added in the completed assignment 
+
+Lifecycle Hooks -> onMounted() and unMounted() that allows us to programmatically hook into component lifecycle 
+
+dependency Injection -> provide() and inject() that allows us to leverage VUE dependency injection system while using reactivity api 
+
+

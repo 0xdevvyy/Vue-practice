@@ -1,15 +1,16 @@
 import Assignment from "./Assignment.js"
 import assignmentTags from "./assignmentTags.js";
+import Panel from "./Panel.js";
 export default {
-    components:{Assignment, assignmentTags},
+    components:{Assignment, assignmentTags, Panel},
     emits: ['toggle'],
     template: `
-         <section v-show="assignments.length" class="bg-gray-700 p-4 broder border-gray-600 rounded-lg">
-            <div class="flex justify-between" >
-                <h2 class="font-bold text-blue mb-2">{{title}}
+         <panel v-show="assignments.length" class="bg-gray-700 p-4 broder border-gray-600 rounded-lg">
+            <div class="flex justify-between mb-2" >
+                <h2 class="font-bold text-blue">{{title}}
                     <span>({{assignments.length}})</span>
                 </h2>
-                <button v-show="canToggle"  @click="$emit('toggle')">&times;</button>
+                <button v-show="canToggle"  @click="$emit('toggle')">x</button>
             </div>
             <assignment-tags 
                 v-model:currentTag="currentTag"
@@ -29,7 +30,7 @@ export default {
             <div>
                 <slot></slot>
             </div>
-        </section>
+        </panel>
     `,
     props: {
         assignments: Array,
